@@ -1,6 +1,7 @@
 package com.github.mgurov.product;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductService {
 
@@ -11,6 +12,6 @@ public class ProductService {
     }
 
     public List<Product> fetchAwesomeProducts() {
-        return productConnector.listProducts();
+        return productConnector.listProducts().stream().filter(p -> p.getTitle().contains("a")).collect(Collectors.toList());
     }
 }
