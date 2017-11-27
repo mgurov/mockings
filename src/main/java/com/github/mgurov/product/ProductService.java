@@ -10,7 +10,7 @@ public class ProductService {
         this.productConnector = productConnector;
     }
 
-    public List<String> fetchAwesomeProducts() {
+    public List<Product> fetchAwesomeProducts() {
         return productConnector.listProducts();
     }
 }
