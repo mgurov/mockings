@@ -12,5 +12,5 @@ public class Product {
     private String identifier;
     private String title;
     @Builder.Default
-    private List<String> eans = new ArrayList<String>();
+    private List<String> eans = new ArrayList<>();
 }
