@@ -11,11 +11,11 @@ import static org.junit.Assert.*;
 
 public class ProductServiceTest {
 
+    ProductConnector productConnector = Mockito.mock(ProductConnector.class);
+    ProductService cut = new ProductService(productConnector);
+
     @Test
     public void shouldInclude_A_product_awesomeProductsList() {
-        //setup
-        ProductConnector productConnector = Mockito.mock(ProductConnector.class);
-        ProductService cut = new ProductService(productConnector);
         //given
         Product awesome = Product.builder().title("blah").build();
         Product notSoMuch = Product.builder().title("fooe").build();
