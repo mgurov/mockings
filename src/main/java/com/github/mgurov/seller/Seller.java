@@ -8,5 +8,6 @@ import lombok.Data;
 public class Seller {
     public String id;
     public String name;
-    public boolean trustWorthy;
+    @Builder.Default
+    public boolean trustWorthy = true;
 }

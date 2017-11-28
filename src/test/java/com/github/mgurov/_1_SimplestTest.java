@@ -1,5 +1,8 @@
-package com.github.mgurov.product;
+package com.github.mgurov;
 
+import com.github.mgurov.product.Product;
+import com.github.mgurov.product.ProductConnector;
+import com.github.mgurov.product.ProductService;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -9,10 +12,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class ProductServiceTest {
-
-    ProductConnector productConnector = Mockito.mock(ProductConnector.class);
-    ProductService cut = new ProductService(productConnector);
+public class _1_SimplestTest {
 
     @Test
     public void shouldInclude_A_product_awesomeProductsList() {
@@ -30,4 +30,7 @@ public class ProductServiceTest {
         //then
         assertEquals(Collections.singletonList(awesome), actual);
     }
+
+    ProductConnector productConnector = Mockito.mock(ProductConnector.class);
+    ProductService cut = new ProductService(productConnector);
 }

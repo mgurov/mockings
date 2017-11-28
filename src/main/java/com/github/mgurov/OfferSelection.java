@@ -8,4 +8,5 @@ import lombok.Data;
 public class OfferSelection {
     private String offerId;
     private int priceCents;
+    private String sellerName;
 }
