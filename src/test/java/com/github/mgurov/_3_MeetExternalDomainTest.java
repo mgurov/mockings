@@ -79,6 +79,10 @@ public class _3_MeetExternalDomainTest {
         ExternalOffer offer2 = cheaper.hasOffer(blahProduct);
         offer2.price = 10;
 
+        Mockito.doThrow(new RuntimeException("Network issue!"))
+                .when(sellerConnector)
+                .fetchSellerById(cheaper.id);
+
         //when
         Optional<String> actual = cut.selectBestOffer(blahProduct.title).map(OfferSelection::getSellerName);
         //then
